@@ -5,6 +5,7 @@ import hu.store.model.domain.Cart;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class DataParser {
@@ -39,6 +40,6 @@ public class DataParser {
 
     private Map<String, Long> createGoodsMap(List<String> items) {
         return items.stream()
-                .collect(Collectors.groupingBy(i -> i, Collectors.counting()));
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 }

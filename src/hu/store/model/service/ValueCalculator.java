@@ -10,7 +10,8 @@ public class ValueCalculator {
     }
 
     private static int ertek(int db) {
-        return db < VALUES.length ? VALUES[db] :
-                VALUES[VALUES.length - 1] + DIFFERENCE * (db - VALUES.length + 1);
+        return db < VALUES.length
+                ? VALUES[db]
+                : VALUES[VALUES.length - 1] + DIFFERENCE * (db - VALUES.length + 1);
     }
 }
